@@ -27,6 +27,13 @@ class User extends Authenticatable
     ];
 
     /**
+     * The Carbon instances
+     *
+     * @var array
+     */
+    protected $dates = ['expired_at'];
+
+    /**
      * Detect if the user membership has expired
      *
      * @return bool

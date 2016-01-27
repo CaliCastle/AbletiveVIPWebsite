@@ -26,7 +26,7 @@
                                     <td>{{ $user->id }}</td>
                                     <td{{ $user->isManager() ? ' class=manager' : '' }}>{{ mb_strlen($user->name, "UTF-8") > 25 ? mb_substr($user->name, 0, 25, "UTF-8") . "..." : $user->name }}</td>
                                     <td>{{ $user->display_name }}</td>
-                                    <td>{{ $user->expired_at }}</td>
+                                    <td>{{ $user->expired_at->format("Y年m月d日") }}</td>
                                     <td>
                                     @unless(Auth::user()->id == $user->id)
                                         <a href="javascript:;" class="edit-btn" data-id="{{ $user->id }}" data-title="{{ $user->name }}" onclick="promoteDidClick($(this))">{{ $user->isManager() ? "取消管理员" : "认命管理员" }}</a>

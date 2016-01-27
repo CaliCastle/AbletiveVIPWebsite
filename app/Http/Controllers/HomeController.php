@@ -18,8 +18,8 @@ class HomeController extends Controller
     public function index()
     {
         $title = "首页";
-        $expired_at = Carbon::createFromFormat('Y-m-d', Auth::user()->expired_at);
-        $expired_date = $expired_at->format('Y年m月d日');
+
+        $expired_date = Auth::user()->expired_at->format('Y年m月d日');
 
         return view('home', compact('title', 'expired_date'));
     }
