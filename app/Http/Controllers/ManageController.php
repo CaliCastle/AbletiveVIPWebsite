@@ -98,7 +98,6 @@ class ManageController extends Controller
     public function saveProject(Project $project, Request $request)
     {
         $params = $this->filterRequest($request);
-//        dd($params);
         if ($project->update($params)) {
             return redirect()->back()->with('status', '工程已更新!');
         } else {
