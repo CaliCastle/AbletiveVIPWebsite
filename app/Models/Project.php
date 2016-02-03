@@ -10,7 +10,7 @@ class Project extends Model
     //
     protected $fillable = [
         'title', 'maker', 'baidu_link', 'qiniu_link', 'thumbnail',
-        'video_link', 'video_link', 'tutorial_link', 'details_link',
+        'video_link', 'video_link', 'tutorial_link', 'video_download', 'details_link',
         'difficulty', 'has_tutorial', 'is_universal', 'description'
     ];
 
