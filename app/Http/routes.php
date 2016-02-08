@@ -25,6 +25,8 @@
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
+
+    Route::get('/api/projects/{difficulty?}', 'APIController@showProjects');
 });
 
 Route::group(['middleware' => ['web', 'auth', 'membership.valid']], function () {
