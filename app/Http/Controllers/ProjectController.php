@@ -30,12 +30,18 @@ class ProjectController extends Controller
      */
     public function showProjects()
     {
-        $projects = Project::alphabetically()->paginate($this->itemPerPage);
+//        $projects = Project::alphabetically()->paginate($this->itemPerPage);
+        $projects = Project::alphabetically()->get();
         $title = "Launchpad工程列表";
 
         return view('projects.show', compact('projects', 'title'));
     }
 
+    /**
+     *
+     * @param $keyword
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function searchProjects($keyword)
     {
         $projects = Project::search($keyword);

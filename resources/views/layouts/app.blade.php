@@ -12,7 +12,8 @@
     <link rel="apple-touch-icon" href="{{ url('favicon.png') }}">
     <link rel="apple-touch-icon-precomposed" href="{{ url('favicon.png') }}">
 
-    <title>{{ isset($title) ? $title : "" }} :: {{ config('app.site.title') }} - {{ config('app.site.title_extra') }}</title>
+    <title>@yield('title'){{ isset($title) ? $title : "" }} :: {{ config('app.site.title') }}
+        - {{ config('app.site.title_extra') }}</title>
 
     <!-- Fonts -->
     <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
