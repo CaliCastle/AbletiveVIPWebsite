@@ -30,8 +30,8 @@ class ProjectController extends Controller
      */
     public function showProjects()
     {
-        $projects = Project::alphabetically()->paginate($this->itemPerPage);
-//        $projects = Project::alphabetically()->get();
+//        $projects = Project::alphabetically()->paginate($this->itemPerPage);
+        $projects = Project::alphabetically()->get();
         $title = "Launchpad工程列表";
 
         return view('projects.show', compact('projects', 'title'));
