@@ -43,18 +43,18 @@
             </p>
         </div>
     </div>
-    {{--@unless(url()->current() == url('/projects/starred'))--}}
-    {{--<div class="row">--}}
-    {{--<div class="pagination-wrapper text-center">--}}
-    {{--<p>{!! $projects->links() !!}</p>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--@endunless--}}
+    @unless(url()->current() == url('/projects/starred'))
+        <div class="row">
+            <div class="pagination-wrapper text-center">
+                <p>{!! $projects->links() !!}</p>
+            </div>
+        </div>
+    @endunless
     <div class="row">
         <p>{{ str_contains($title,"搜索结果") ? "相关" : "本页" }}工程: {{ count($projects) }}个
-            {{--@unless(url()->current() == url('/projects/starred'))--}}
-            {{--, 所有工程 {{ $projects->total() }}个--}}
-            {{--@endunless--}}
+            @unless(url()->current() == url('/projects/starred'))
+                , 所有工程 {{ $projects->total() }}个
+            @endunless
         </p>
     </div>
 </div>
@@ -73,7 +73,8 @@
             <div class="slider">
                 <div class="slider__item">
                     <img class="preload-images" data-src="{{ $project->thumbnail }}"
-                         src="{{ url("images/placeholder.jpg") }}" alt="{{ $project->title }}"/>
+                         src="{{ $project->thumbnail == "" ? url("images/placeholder.jpg") : $project->thumbnail }}"
+                         alt="{{ $project->title }}"/>
                 </div>
                 @if($project->description)
                     <div class="slider__item">
@@ -136,13 +137,13 @@
     @endif
 </div>
 
-{{--@unless(url()->current() == url('/projects/starred'))--}}
-{{--<div class="pagination-wrapper text-center">--}}
-{{--<p>--}}
-{{--{!! $projects->links() !!}--}}
-{{--</p>--}}
-{{--</div>--}}
-{{--@endunless--}}
+@unless(url()->current() == url('/projects/starred'))
+    <div class="pagination-wrapper text-center">
+        <p>
+            {!! $projects->links() !!}
+        </p>
+    </div>
+@endunless
 @stop
 
 @section('footer-scripts')
@@ -328,7 +329,7 @@
             }
 
             init();
-            preloadImages();
+//            preloadImages();
 
         })(window);
 
