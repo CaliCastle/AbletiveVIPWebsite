@@ -59,7 +59,7 @@ class HomeController extends Controller
         $json = json_decode($result);
 
         $user = Auth::user();
-        $user->avatar = $json->avatar;
+        $user->avatar = $this->filterImageTag($json->avatar);
         $user->save();
 
         if ($json->status == "ok" && $json->member->endTime != "N/A") {
@@ -69,5 +69,22 @@ class HomeController extends Controller
             }
         }
         return false;
+    }
+
+    /**
+     * Get src from the image tag
+     *
+     * @param $html
+     * @return mixed
+     */
+    protected function filterImageTag($html)
+    {
+        if (!str_contains($html, '<img src')) {
+            return $html;
+        }
+        $matches = array();
+        $pattern ='<img.*?src="(.*?)">';
+        preg_match($pattern,$html,$matches);
+        return $matches[1];
     }
 }
