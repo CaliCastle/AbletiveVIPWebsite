@@ -62,4 +62,19 @@ class Project extends Model
         return $query->orderBy('title', 'asc');
     }
 
+    /**
+     * Replace http with https ssl connection
+     *
+     * @return string
+     */
+    public function getThumbnailAttribute()
+    {
+        $thumbnail = $this->attributes["thumbnail"];
+
+        if (!str_contains($thumbnail, 'https://')) {
+            $thumbnail = str_replace('http', 'https', $thumbnail);
+        }
+
+        return $thumbnail;
+    }
 }
