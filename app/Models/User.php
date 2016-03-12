@@ -102,4 +102,20 @@ class User extends Authenticatable
     {
         return $query->orderBy('role', 'desc');
     }
+
+    /**
+     * Get the avatar image source
+     *
+     * @return string
+     */
+    public function getAvatarAttribute()
+    {
+        $avatar = $this->attributes["avatar"];
+
+        if (!str_contains($avatar, 'https://')) {
+            $avatar = str_replace('http', 'https', $avatar);
+        }
+
+        return $avatar;
+    }
 }
