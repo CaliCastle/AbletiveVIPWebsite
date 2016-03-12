@@ -8,6 +8,10 @@
     <meta name="keywords" content="{{ config('app.site.keywords') }}">
     <meta name="author" content="{{ config('app.site.author') }}">
 
+    <meta name="apple-itunes-app" content="app-id=1050395770" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
     <link rel="icon" href="{{ url('favicon.png') }}">
     <link rel="apple-touch-icon" href="{{ url('favicon.png') }}">
     <link rel="apple-touch-icon-precomposed" href="{{ url('favicon.png') }}">
