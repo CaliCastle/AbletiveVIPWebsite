@@ -4,7 +4,8 @@
             <div class="navbar-left">
                 <li><a href="{{ url('/') }}"><i class="fa fa-home"></i>&nbsp;主页</a></li>
                 <li><a href="{{ url('/projects') }}"><i class="fa fa-cloud-download"></i>&nbsp;工程下载</a></li>
-                <li><a href="http://v.abletive.com" target="_blank"><i class="fa fa-book"></i>&nbsp;教学视频</a></li>
+                <li><a href="https://v.abletive.com" target="_blank"><i class="fa fa-book"></i>&nbsp;教学视频</a></li>
+                <li><a href="https://appsto.re/cn/6r8M-.i" target="_blank"><i class="fa fa-apple"></i> iOS App</a></li>
                 @if(url()->previous())
                     <li><a href="{{ url()->previous() }}"><i class="fa fa-chevron-circle-left"></i>&nbsp;返回</a></li>
                 @endif
