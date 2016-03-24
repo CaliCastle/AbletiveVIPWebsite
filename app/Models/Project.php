@@ -69,12 +69,15 @@ class Project extends Model
      */
     public function getThumbnailAttribute()
     {
-        $thumbnail = $this->attributes["thumbnail"];
+        if ($this->title) {
+            $thumbnail = $this->attributes["thumbnail"];
 
-        if (!str_contains($thumbnail, 'https://')) {
-            $thumbnail = str_replace('http', 'https', $thumbnail);
+            if (!str_contains($thumbnail, 'https://')) {
+                $thumbnail = str_replace('http', 'https', $thumbnail);
+            }
+
+            return $thumbnail;
         }
-
-        return $thumbnail;
+        return "";
     }
 }
