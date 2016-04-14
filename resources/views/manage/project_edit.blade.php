@@ -34,6 +34,18 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="" class="col-sm-2">360云盘</label>
+                            <div class="col-sm-10">
+                                <input type="text" value="{{ $project->getAttribute('360_link') }}" name="360_link">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">云盘密码</label>
+                            <div class="col-sm-10">
+                                <input type="text" value="{{ $project->password }}" name="password">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="" class="col-sm-2">图片地址</label>
                             <div class="col-sm-10">
                                 <input type="text" value="{{ $project->thumbnail }}" name="thumbnail">

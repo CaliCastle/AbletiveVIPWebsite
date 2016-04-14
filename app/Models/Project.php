@@ -8,10 +8,15 @@ use Illuminate\Support\Facades\Auth;
 class Project extends Model
 {
     //
-    protected $fillable = [
-        'title', 'maker', 'baidu_link', 'qiniu_link', 'thumbnail',
-        'video_link', 'video_link', 'tutorial_link', 'video_download',
-        'details_link', 'difficulty', 'has_tutorial', 'is_universal', 'description'
+//    protected $fillable = [
+//        'title', 'maker', 'baidu_link', 'qiniu_link', 'thumbnail',
+//        'video_link', 'video_link', 'tutorial_link', 'video_download',
+//        'details_link', 'difficulty', 'has_tutorial', 'is_universal', 'description',
+//        'password', '360_link'
+//    ];
+    
+    protected $guarded = [
+        'id'
     ];
 
     /**

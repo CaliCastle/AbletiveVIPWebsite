@@ -94,7 +94,9 @@
                         <a class="edit-link" href="{{ action('ManageController@editProject', ["id" => $project->id]) }}" title="编辑"><i class="fa fa-edit"></i></a>
                     @endif
                     </span>
-
+                @if($project->password)
+                    <span class="password">网盘密码: {{ $project->password }}</span>
+                @endif
                 <div class="actions">
                     @if($project->baidu_link)
                         <a href="{{ $project->baidu_link }}" title="百度网盘" class="baidu-btn" target="_blank"><i class="fa fa-paw"></i></a>
@@ -102,6 +104,10 @@
 
                     @if($project->qiniu_link)
                         <a href="{{ $project->qiniu_link }}" title="社区云盘" class="qiniu-btn" target="_blank"><i class="fa fa-cloud-download"></i></a>
+                    @endif
+
+                    @if($project->getAttribute('360_link'))
+                        <a href="{{ $project->getAttribute('360_link') }}" title="360云盘" class="qiniu-btn" target="_blank"><i class="fa fa-cloud-download"></i></a>
                     @endif
 
                     @if($project->video_link)
