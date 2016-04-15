@@ -3,8 +3,8 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddPasswordColumn extends Migration
-{
+class AddPasswordColumn extends Migration {
+
     /**
      * Run the migrations.
      *
