@@ -34,7 +34,7 @@ class ManageController extends Controller
         $title = "工程管理";
         $manage = true;
 
-        $projects = Project::alphabetically()->paginate(50);
+        $projects = Project::latest()->paginate(50);
 
         return view('manage.projects', compact('title', 'manage', 'projects'));
     }
